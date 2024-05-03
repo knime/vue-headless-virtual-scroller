@@ -1,0 +1,12 @@
+image: node:20.11.1
+
+definitions:
+  steps:
+    - step: &dummy-step
+        name: Dummy pipeline
+          - echo "Hello World"
+
+pipelines:
+  branches:
+    master:
+      - step: *dummy-step
