@@ -4,6 +4,7 @@ definitions:
   steps:
     - step: &dummy-step
         name: Dummy pipeline
+        script:
           - echo "Hello World"
 
 pipelines:
