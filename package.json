@@ -1,8 +1,13 @@
 {
-  "name": "vue-virtual-grid-scroller",
-  "version": "0.0.0",
+  "name": "@knime/vue-headless-virtual-scroller",
+  "version": "0.1.0",
   "type": "module",
-  "private": true,
+  "license": "GPL 3 and Additional Permissions according to Sec. 7 (SEE LICENSE IN license.txt)",
+  "author": "KNIME AG, Zurich, Switzerland",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/knime/vue-headless-virtual-scroller"
+  },
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
