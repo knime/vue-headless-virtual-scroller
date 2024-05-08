@@ -6,6 +6,10 @@ import { flushPromises } from "@vue/test-utils";
 describe("ArrayIndividualSizeManager", () => {
   const sizeManager = new ArraySizeManager([10, 20, 30, 40, 50]);
 
+  it("provides number of items", () => {
+    expect(sizeManager.getNumItems()).toBe(5);
+  });
+
   it("computes index from position", () => {
     expect(sizeManager.toIndex(0)).toBe(0);
     expect(sizeManager.toIndex(5)).toBe(0);

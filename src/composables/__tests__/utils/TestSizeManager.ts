@@ -7,22 +7,30 @@ export class TestSizeManager implements SizeManager {
   private _toPosition: (index: number) => number;
   private _totalSize: number;
   private _updateTrigger: Ref<boolean>;
+  private _numItems: number;
 
   constructor({
     totalSize,
     toIndex,
     toPosition,
     updateTrigger,
+    numItems,
   }: {
     totalSize: number;
     toIndex: (position: number) => number;
     toPosition: (index: number) => number;
     updateTrigger: Ref<boolean>;
+    numItems: number;
   }) {
     this._toIndex = toIndex;
     this._toPosition = toPosition;
     this._totalSize = totalSize;
     this._updateTrigger = updateTrigger;
+    this._numItems = numItems;
+  }
+
+  getNumItems(): number {
+    return this._numItems;
   }
 
   onUpdate(callback: () => void): void {

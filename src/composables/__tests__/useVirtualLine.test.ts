@@ -26,6 +26,7 @@ describe("useVirtualLine", () => {
       toPosition,
       totalSize,
       updateTrigger,
+      numItems: 1000,
     });
   });
 
@@ -43,6 +44,20 @@ describe("useVirtualLine", () => {
     expect(toIndex).toHaveBeenCalledWith(500);
     expect(toIndex).toHaveBeenCalledWith(-500);
     expect(toPosition).not.toHaveBeenCalled();
+  });
+
+  it("does not yield an endIndex greater than the number of items", () => {
+    const numItems = 10;
+    const { indices } = useVirtualLine({
+      sizeManager: new TestSizeManager({
+        toIndex,
+        toPosition,
+        totalSize,
+        updateTrigger: ref(false),
+        numItems,
+      }),
+    });
+    expect(indices.value).toMatchObject({ endIndex: numItems });
   });
 
   describe.each([

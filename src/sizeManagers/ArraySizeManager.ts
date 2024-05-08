@@ -24,7 +24,7 @@ class BinarySearch {
 }
 
 export class ArraySizeManager implements SizeManager {
-  private numItems: MaybeRef<number>;
+  private numItems: Ref<number>;
   private accumulatedSizes: Ref<number[]>;
 
   constructor(sizes: MaybeRef<number[]>) {
@@ -36,6 +36,10 @@ export class ArraySizeManager implements SizeManager {
       }
       return out;
     });
+  }
+
+  getNumItems(): number {
+    return unref(this.numItems);
   }
 
   onUpdate(callback: () => void): void {

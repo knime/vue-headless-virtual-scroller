@@ -13,18 +13,19 @@ describe("useVirtualGrid", () => {
   beforeEach(() => {
     const toIndex = (position: number) => position;
     const toPosition = (index: number) => index;
+    const commonParams = {
+      toIndex,
+      toPosition,
+      updateTrigger: ref(false),
+      numItems: 1000,
+    };
     const rowSizeManager = new TestSizeManager({
-      toIndex,
-      toPosition,
       totalSize: totalHeight,
-      updateTrigger: ref(false),
+      ...commonParams,
     });
-
     const columnSizeManager = new TestSizeManager({
-      toIndex,
-      toPosition,
       totalSize: totalWidth,
-      updateTrigger: ref(false),
+      ...commonParams,
     });
 
     virtualGrid = useVirtualGrid({

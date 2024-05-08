@@ -1,6 +1,7 @@
 export interface SizeManager {
   getTotalSize(): number;
   toIndex(position: number): number;
+  getNumItems(): number;
   toOffset(index: number): number;
   onUpdate(callback: () => void): void;
 }
@@ -18,6 +19,10 @@ export class SizeManagerDecorator implements SizeManager {
 
   toIndex(position: number): number {
     return this.delegate.toIndex(position);
+  }
+
+  getNumItems(): number {
+    return this.delegate.getNumItems();
   }
 
   toOffset(index: number): number {

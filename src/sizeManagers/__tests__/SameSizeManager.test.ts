@@ -6,6 +6,10 @@ import { flushPromises } from "@vue/test-utils";
 describe("SameSizeManager", () => {
   const sizeManager = new SameSizeManager(100, 20);
 
+  it("provides number of items", () => {
+    expect(sizeManager.getNumItems()).toBe(100);
+  });
+
   it("computes index from position", () => {
     expect(sizeManager.toIndex(88)).toBe(4);
     // bounds

@@ -39,7 +39,10 @@ export default (
 
   const indices = computed(() => {
     const startIndex = sizeManager.toIndex(scroll.value.scrollStart - buffer);
-    const endIndex = sizeManager.toIndex(scroll.value.scrollEnd + buffer) + 1;
+    const endIndex = Math.min(
+      sizeManager.toIndex(scroll.value.scrollEnd + buffer) + 1,
+      sizeManager.getNumItems(),
+    );
     const toArray = () =>
       Array.from({ length: endIndex - startIndex }, (_v, i) => startIndex + i);
     return { startIndex, endIndex, toArray };

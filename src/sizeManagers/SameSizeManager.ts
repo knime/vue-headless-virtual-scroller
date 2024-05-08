@@ -2,10 +2,6 @@ import { unref, type MaybeRef } from "vue";
 import type { SizeManager } from "./SizeManager";
 import { watchMaybeRef } from "./utils";
 
-export const clipToBounds = (value: number, upperBound: number) => {
-  return Math.max(Math.min(value, upperBound - 1), 0);
-};
-
 const divideRoundedDown = (num: number, divisor: number) => {
   return Math.floor(num / divisor);
 };
@@ -17,6 +13,10 @@ export class SameSizeManager implements SizeManager {
   constructor(numItems: MaybeRef<number>, size: MaybeRef<number>) {
     this.numItems = numItems;
     this.size = size;
+  }
+
+  getNumItems(): number {
+    return unref(this.numItems);
   }
 
   onUpdate(callback: () => void): void {
@@ -33,9 +33,12 @@ export class SameSizeManager implements SizeManager {
   }
 
   toIndex(position: number): number {
-    return clipToBounds(
-      divideRoundedDown(position, unref(this.size)),
-      unref(this.numItems),
+    return Math.max(
+      Math.min(
+        divideRoundedDown(position, unref(this.size)),
+        unref(this.numItems) - 1,
+      ),
+      0,
     );
   }
 }
