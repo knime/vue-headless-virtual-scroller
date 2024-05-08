@@ -1,6 +1,7 @@
 {
   "name": "@knime/vue-headless-virtual-scroller",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "description": "Fast scrolling of large amounts of data",
   "type": "module",
   "license": "GPL 3 and Additional Permissions according to Sec. 7 (SEE LICENSE IN license.txt)",
   "author": "KNIME AG, Zurich, Switzerland",
@@ -8,6 +9,12 @@
     "type": "git",
     "url": "https://github.com/knime/vue-headless-virtual-scroller"
   },
+  "keywords": [
+    "vue",
+    "composable",
+    "headless",
+    "scrolling"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
