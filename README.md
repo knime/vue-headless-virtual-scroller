@@ -10,6 +10,28 @@ Uses a virtual grid to enable simultanous horizontal ⇢ and vertical ⇣ virtua
 
 Inspired by [Vue Virtual Scroller].
 
+## Demo
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/knime/vue-headless-virtual-scroller/tree/master/demo)
+
+## Using it in a Vue component
+
+Install [@knime/vue-headless-virtual-scroller] npm package as dependency:
+
+```sh
+npm i @knime/vue-headless-virtual-scroller
+```
+
+The library exposes two Vue composables which can be utilized depending on the use case:
+
+- `useVirtualLine([...])` enables scrolling in a single direction
+- `useVirtualGrid([...])` enables scrolling in both horizontal and vertical directions
+
+A `SizeManager` is passed as prop to determine how virtual sizes are determined for scrolling. E.g. a `SameSizeManager` assumes that all contained items will have the same height (or width respectively).
+
+See the [`DemoGrid.vue`](demo/src/components/DemoGrid.vue) for a simple integration.
+
+
 ## Development
 
 ### Prerequisites
@@ -80,23 +102,6 @@ npm run build
 ```
 
 Results are saved to `/dist` folder.
-
-## Using the Vue Headless Virtual Scroller in a Vue component
-
-Install [@knime/vue-headless-virtual-scroller] npm package as dependency:
-
-```sh
-npm i @knime/vue-headless-virtual-scroller
-```
-
-The library exposes two Vue composables which can be utilized depending on the use case:
-
-- `useVirtualLine([...])` enables scrolling in a single direction
-- `useVirtualGrid([...])` enables scrolling in both horizontal and vertical directions
-
-A `SizeManager` is passed as prop to determine how virtual sizes are determined for scrolling. E.g. a `SameSizeManager` assumes that all contained items will have the same height (or width respectively).
-
-See the [`DemoGrid.vue`](src/demo/DemoGrid.vue) for a simple integration.
 
 ## Join the Community!
 
