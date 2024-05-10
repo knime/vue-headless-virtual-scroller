@@ -16,7 +16,7 @@
     "scrolling"
   ],
   "scripts": {
-    "dev": "vite",
+    "dev": "vite -c viteDev.config.ts",
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
     "test:unit": "vitest",

@@ -31,7 +31,6 @@ A `SizeManager` is passed as prop to determine how virtual sizes are determined 
 
 See the [`DemoGrid.vue`](demo/src/components/DemoGrid.vue) for a simple integration.
 
-
 ## Development
 
 ### Prerequisites

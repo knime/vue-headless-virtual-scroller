@@ -3,10 +3,10 @@ import {
   useVirtualGrid,
   SameSizeManager,
   ArraySizeManager,
-} from '@knime/vue-headless-virtual-scroller';
+} from "@knime/vue-headless-virtual-scroller";
 
-import DemoCell from './DemoCell.vue';
-import { toRef } from 'vue';
+import DemoCell from "./DemoCell.vue";
+import { toRef } from "vue";
 
 const props = defineProps<{
   data?: string[][];
@@ -23,7 +23,7 @@ const {
   scrolledAreaStyles: { horizontal: hStyles, vertical: vStyles },
 } = useVirtualGrid({
   rows: {
-    sizeManager: new SameSizeManager(numRows, toRef(props, 'rowHeight')),
+    sizeManager: new SameSizeManager(numRows, toRef(props, "rowHeight")),
   },
   columns: { sizeManager: new ArraySizeManager(columnWidths) },
 });
