@@ -59,10 +59,12 @@ describe("useVirtualGrid", () => {
       expect(scrolledAreaStyles.vertical.value).toStrictEqual({
         height: "2000px",
         paddingTop: "-500px",
+        boxSizing: "border-box",
       });
       expect(scrolledAreaStyles.horizontal.value).toStrictEqual({
         width: "1000px",
         paddingLeft: "-500px",
+        boxSizing: "border-box",
       });
     });
   });
@@ -112,10 +114,12 @@ describe("useVirtualGrid", () => {
       expect(virtualGrid.scrolledAreaStyles.vertical.value).toStrictEqual({
         height: "2000px",
         paddingTop: "-400px",
+        boxSizing: "border-box",
       });
       expect(virtualGrid.scrolledAreaStyles.horizontal.value).toStrictEqual({
         width: "1000px",
         paddingLeft: "-300px",
+        boxSizing: "border-box",
       });
     });
   });

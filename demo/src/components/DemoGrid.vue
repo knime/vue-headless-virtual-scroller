@@ -46,14 +46,12 @@ const {
     </tbody>
   </table>
   {{ containerProps }}<br />
-  {{ vertical }}<br />
-  {{ horizontal }}<br />
-  {{ vStyles }}<br />
-  {{ hStyles }}<br />
+  vertical: {{ vertical }} {{ vStyles }}<br />
+  horizontal: {{ horizontal }} {{ hStyles }}<br />
 </template>
 
 <style lang="postcss" scoped>
-table {
+.table {
   border: 1px solid black;
   height: 300px;
   width: 100%;

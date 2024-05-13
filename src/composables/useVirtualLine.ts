@@ -48,9 +48,16 @@ export default (
     return { startIndex, endIndex, toArray };
   });
   const offset = computed(() => sizeManager.toOffset(indices.value.startIndex));
-  const scrolledAreaStyles = computed(() => ({
+  const scrolledAreaStyles = computed<CSSProperties>(() => ({
     [`padding${isVertical ? "Top" : "Left"}`]: `${offset.value}px`,
     [isVertical ? "height" : "width"]: `${sizeManager.getTotalSize()}px`,
+    /**
+     * Since the height of the element should not be influenced by its padding.
+     * An alternative without box-sizing: "border-box" would be to use margins instead
+     * paddings, but then it is no longer easily possible to absolutely position
+     * other elements (e.g. a cell selection overlay) inside this element.
+     */
+    boxSizing: "border-box",
   }));
 
   return {

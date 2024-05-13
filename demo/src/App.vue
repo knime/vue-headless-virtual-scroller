@@ -13,14 +13,6 @@ const data = reactive(
 // eslint-disable-next-line no-magic-numbers
 const rowHeight = ref(30);
 
-const changeFirstCell = () => {
-  data[0][0] = ":)";
-};
-
-const changeFirstRow = () => {
-  data[0] = ["Hallo", "Welt"];
-};
-
 const changeRowHeight = () => {
   rowHeight.value += 10;
 };
@@ -29,7 +21,5 @@ const changeRowHeight = () => {
 <template>
   <h1>@knime/vue-headless-virtual-scroller demo</h1>
   <DemoGrid :data="data" :row-height="rowHeight" />
-  <button @click="changeFirstCell">Change first cell</button>
-  <button @click="changeFirstRow">Change first row</button>
   <button @click="changeRowHeight">rowHeight + 10</button>
 </template>

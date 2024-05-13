@@ -79,6 +79,7 @@ describe("useVirtualLine", () => {
         expect(scrolledAreaStyles.value).toEqual({
           [heightOrWidth]: "1000px",
           [`padding${topOrLeft}`]: "-500px",
+          boxSizing: "border-box",
         });
         expect(toPosition).toHaveBeenCalledWith(-500);
       });
@@ -124,6 +125,7 @@ describe("useVirtualLine", () => {
           expect(scrolledAreaStyles.value).toEqual({
             [heightOrWidth]: "1000px",
             [`padding${topOrLeft}`]: "-400px",
+            boxSizing: "border-box",
           });
         });
       });
