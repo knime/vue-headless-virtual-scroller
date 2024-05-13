@@ -12,7 +12,7 @@ Inspired by [Vue Virtual Scroller].
 
 ## Demo
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/knime/vue-headless-virtual-scroller/tree/master/demo)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/knime/vue-headless-virtual-scroller/tree/master/demo?file=src%2Fcomponents%2FDemoGrid.vue)
 
 ## Using it in a Vue component
 
