@@ -29,7 +29,7 @@
     "ci:lint": "npm run lint && npm run lint -- -f json -o test-results/eslint.json",
     "ci:lint-format": "run-p ci:lint format:check -c",
     "audit": "npm audit --omit dev",
-    "prepare": "husky"
+    "prepare": "husky && license-check -c"
   },
   "dependencies": {
     "raf-throttle": "2.0.6",
@@ -37,6 +37,8 @@
   },
   "devDependencies": {
     "@knime/eslint-config": "8.0.14",
+    "@knime/licenses": "1.0.5",
+    "@knime/utils": "1.0.8",
     "@tsconfig/node20": "20.1.2",
     "@types/jsdom": "20.0.1",
     "@types/node": "20.11.6",

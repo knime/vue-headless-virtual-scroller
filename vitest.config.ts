@@ -17,7 +17,6 @@ export default mergeConfig(
           "dist/**",
           "lib/**",
           "demo/**",
-          "webapps-common/**",
           "**/*.d.ts",
           "**/__tests__/**",
           "**/{vite,vitest,viteDev,postcss,lint-staged}.config.{js,cjs,mjs,ts}",

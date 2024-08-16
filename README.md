@@ -39,12 +39,6 @@ See the [`DemoGrid.vue`](demo/src/components/DemoGrid.vue) for a simple integrat
 
 Newer versions may also work, but have not been tested.
 
-Pull the contained [git submodules](https://stackoverflow.com/a/4438292/5134084) with
-
-```sh
-git submodule update --init
-```
-
 ### Install dependencies
 
 ```sh
