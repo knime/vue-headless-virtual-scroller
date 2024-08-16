@@ -1,6 +1,6 @@
 {
   "name": "@knime/vue-headless-virtual-scroller",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Fast scrolling of large amounts of data",
   "type": "module",
   "license": "GPL 3 and Additional Permissions according to Sec. 7 (SEE LICENSE IN license.txt)",
