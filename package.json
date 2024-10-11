@@ -16,9 +16,10 @@
     "scrolling"
   ],
   "scripts": {
-    "dev": "vite -c viteDev.config.ts",
+    "dev": "run-p dev:link dev:build",
+    "dev:link": "npm link && cd demo && npm link @knime/vue-headless-virtual-scroller && npm run dev",
+    "dev:build": "npm run build-only -- --watch",
     "build": "run-p type-check \"build-only {@}\" --",
-    "preview": "vite preview",
     "test:unit": "vitest",
     "coverage": "vitest run --coverage",
     "build-only": "vite build",

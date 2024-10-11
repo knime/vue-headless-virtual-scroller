@@ -3,16 +3,25 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "dev": "npm run storybook",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@knime/vue-headless-virtual-scroller": "*",
     "vue": "3.4.27"
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "8.3.5",
+    "@storybook/addon-interactions": "8.3.5",
+    "@storybook/addon-links": "8.3.5",
+    "@storybook/addon-onboarding": "8.3.5",
+    "@storybook/blocks": "8.3.5",
+    "@storybook/test": "8.3.5",
+    "@storybook/vue3": "8.3.5",
+    "@storybook/vue3-vite": "8.3.5",
     "@vitejs/plugin-vue": "5.0.4",
+    "storybook": "8.3.5",
     "typescript": "5.2.2",
     "vite": "5.2.11",
     "vue-tsc": "2.0.16"

@@ -5,7 +5,7 @@ const backgroundColor = ref("red");
 
 onMounted(() => {
   setTimeout(() => {
-    backgroundColor.value = "green";
+    backgroundColor.value = "unset";
   }, 100);
 });
 </script>
@@ -15,3 +15,13 @@ onMounted(() => {
     <slot />
   </td>
 </template>
+
+<style lang="postcss" scoped>
+td {
+  border: 1px solid grey;
+  border-radius: 10px;
+  font-size: x-small;
+  text-align: center;
+  margin: 1px;
+}
+</style>

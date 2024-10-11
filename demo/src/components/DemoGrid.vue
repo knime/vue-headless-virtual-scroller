@@ -1,31 +1,20 @@
 <script setup lang="ts">
-import {
-  useVirtualGrid,
-  SameSizeManager,
-  ArraySizeManager,
-} from "@knime/vue-headless-virtual-scroller";
-
+import { useVirtualGrid } from "@knime/vue-headless-virtual-scroller";
 import DemoCell from "./DemoCell.vue";
-import { toRef } from "vue";
+import { SizeManagerWithSizes } from "../stories/constructSizeManagerWithSizes";
 
 const props = defineProps<{
-  data?: string[][];
-  rowHeight: number;
+  rowSizeManager: SizeManagerWithSizes;
+  columnSizeManager: SizeManagerWithSizes;
 }>();
-
-const numRows = 1000;
-// eslint-disable-next-line no-magic-numbers
-const columnWidths = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140];
 
 const {
   containerProps,
   indices: { vertical, horizontal },
   scrolledAreaStyles: { horizontal: hStyles, vertical: vStyles },
 } = useVirtualGrid({
-  rows: {
-    sizeManager: new SameSizeManager(numRows, toRef(props, "rowHeight")),
-  },
-  columns: { sizeManager: new ArraySizeManager(columnWidths) },
+  rows: { sizeManager: props.rowSizeManager.sizeManager },
+  columns: { sizeManager: props.columnSizeManager.sizeManager },
 });
 </script>
 
@@ -35,45 +24,37 @@ const {
       <tr
         v-for="rowInd in vertical.toArray()"
         :key="rowInd"
-        :style="{ height: `${rowHeight}px` }"
+        :style="{ height: `${rowSizeManager.sizes(rowInd)}px` }"
       >
-        <template v-for="colInd in horizontal.toArray()" :key="colInd">
-          <DemoCell :style="{ width: `${columnWidths[colInd]}px` }">
-            {{ data?.[rowInd][colInd] }}
-          </DemoCell>
-        </template>
+        <DemoCell
+          v-for="colInd in horizontal.toArray()"
+          :key="colInd"
+          :style="{ width: `${columnSizeManager.sizes(colInd)}px` }"
+        >
+          {{ rowInd }}:{{ colInd }}
+        </DemoCell>
       </tr>
     </tbody>
   </table>
-  {{ containerProps }}<br />
-  vertical: {{ vertical }} {{ vStyles }}<br />
-  horizontal: {{ horizontal }} {{ hStyles }}<br />
 </template>
 
 <style lang="postcss" scoped>
-.table {
-  border: 1px solid black;
+table {
   height: 300px;
   width: 100%;
-  overflow: auto auto;
+  overflow: auto;
   display: block;
 }
 
 tbody {
   display: inline-block;
   flex-direction: column;
-  background-color: lightblue;
 }
 
 tr {
   background-size: contain;
-  border: 1px solid gray;
   display: flex;
   flex-shrink: 0;
   flex-direction: row;
-}
-
-td {
-  border: 1px solid orange;
 }
 </style>
