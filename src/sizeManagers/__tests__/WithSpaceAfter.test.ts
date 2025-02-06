@@ -1,7 +1,8 @@
 import { describe, expect, it, vi } from "vitest";
-import { SameSizeManager } from "../SameSizeManager";
 import { ref } from "vue";
 import { flushPromises } from "@vue/test-utils";
+
+import { SameSizeManager } from "../SameSizeManager";
 import { WithSpaceAfter } from "../WithSpaceAfter";
 
 describe("WithSpaceAfter", () => {

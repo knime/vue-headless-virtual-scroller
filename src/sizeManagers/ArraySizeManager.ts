@@ -1,5 +1,6 @@
+import { type MaybeRef, type Ref, computed, unref, watch } from "vue";
+
 import { type SizeManager } from "./SizeManager";
-import { unref, type MaybeRef, computed, type Ref, watch } from "vue";
 
 class BinarySearch {
   private isLeft: (index: number) => boolean;

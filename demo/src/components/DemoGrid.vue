@@ -1,12 +1,13 @@
 <script setup lang="ts">
+import { toRef } from "vue";
+
 import {
-  useVirtualGrid,
-  SameSizeManager,
   ArraySizeManager,
+  SameSizeManager,
+  useVirtualGrid,
 } from "@knime/vue-headless-virtual-scroller";
 
 import DemoCell from "./DemoCell.vue";
-import { toRef } from "vue";
 
 const props = defineProps<{
   data?: string[][];
@@ -55,7 +56,7 @@ const {
   border: 1px solid black;
   height: 300px;
   width: 100%;
-  overflow: auto auto;
+  overflow: auto;
   display: block;
 }
 

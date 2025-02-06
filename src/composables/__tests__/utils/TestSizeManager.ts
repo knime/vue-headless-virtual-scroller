@@ -1,5 +1,6 @@
-import type { SizeManager } from "@/sizeManagers/SizeManager";
 import { Ref, watch } from "vue";
+
+import type { SizeManager } from "@/sizeManagers/SizeManager";
 
 export const SIZE_AFTER_UPDATE = 1234;
 export class TestSizeManager implements SizeManager {

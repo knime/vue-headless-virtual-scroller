@@ -1,5 +1,6 @@
+import { type Ref, computed, ref, watch } from "vue";
+
 import type { Direction } from "@/composables/types";
-import { computed, ref, watch, type Ref } from "vue";
 
 const useNumber = () => {
   const num = ref(0);

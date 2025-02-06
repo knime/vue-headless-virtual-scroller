@@ -1,8 +1,10 @@
-import rafThrottle from "raf-throttle";
-import { computed, ref, type CSSProperties, type Ref } from "vue";
-import type { ComposableReturnType, Direction, IndexStartEnd } from "./types";
-import type { SizeManager } from "@/sizeManagers/SizeManager";
+import { type CSSProperties, type Ref, computed, ref } from "vue";
 import { useResizeObserver } from "@vueuse/core";
+import rafThrottle from "raf-throttle";
+
+import type { SizeManager } from "@/sizeManagers/SizeManager";
+
+import type { ComposableReturnType, Direction, IndexStartEnd } from "./types";
 
 const defaultBufferSize = 500;
 export default (

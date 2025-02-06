@@ -1,9 +1,11 @@
 import { beforeEach, describe, expect, it } from "vitest";
+import { ref } from "vue";
+import { flushPromises } from "@vue/test-utils";
+
+import useVirtualGrid from "../useVirtualGrid";
+
 import { TestSizeManager } from "./utils/TestSizeManager";
 import { useSimulatedGridScroller } from "./utils/useSimulatedScroller";
-import { flushPromises } from "@vue/test-utils";
-import useVirtualGrid from "../useVirtualGrid";
-import { ref } from "vue";
 
 describe("useVirtualGrid", () => {
   let virtualGrid: ReturnType<typeof useVirtualGrid>;

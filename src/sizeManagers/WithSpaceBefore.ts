@@ -1,5 +1,6 @@
-import { SizeManagerDecorator, type SizeManager } from "./SizeManager";
-import { unref, type MaybeRef } from "vue";
+import { type MaybeRef, unref } from "vue";
+
+import { type SizeManager, SizeManagerDecorator } from "./SizeManager";
 import { watchMaybeRef } from "./utils";
 
 /**

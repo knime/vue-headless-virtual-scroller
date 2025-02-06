@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { reactive, ref } from "vue";
+
 import DemoGrid from "./components/DemoGrid.vue";
 
 const numRows = 1000;

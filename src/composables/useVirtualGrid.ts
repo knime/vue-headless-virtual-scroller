@@ -1,7 +1,8 @@
-import { type CSSProperties, ref, type Ref } from "vue";
-import useVirtualLine from "./useVirtualLine";
-import type { ComposableReturnType, Direction, IndexStartEnd } from "./types";
+import { type CSSProperties, type Ref, ref } from "vue";
 import { useResizeObserver } from "@vueuse/core";
+
+import type { ComposableReturnType, Direction, IndexStartEnd } from "./types";
+import useVirtualLine from "./useVirtualLine";
 
 type LineProps = Parameters<typeof useVirtualLine>[0];
 

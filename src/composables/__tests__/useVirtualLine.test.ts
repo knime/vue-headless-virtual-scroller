@@ -1,11 +1,13 @@
-import { beforeEach, describe, expect, it, vi, type Mock } from "vitest";
+import { type Mock, beforeEach, describe, expect, it, vi } from "vitest";
+import { ref } from "vue";
+import { flushPromises } from "@vue/test-utils";
+
+import { SizeManager } from "@/sizeManagers";
+import type { Direction } from "../types";
 import useVirtualLine from "../useVirtualLine";
+
 import { SIZE_AFTER_UPDATE, TestSizeManager } from "./utils/TestSizeManager";
 import useSimulatedScroller from "./utils/useSimulatedScroller";
-import type { Direction } from "../types";
-import { flushPromises } from "@vue/test-utils";
-import { SizeManager } from "@/sizeManagers";
-import { ref } from "vue";
 
 describe("useVirtualLine", () => {
   let toIndex: Mock,

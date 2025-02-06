@@ -1,4 +1,4 @@
-import type { Ref, CSSProperties } from "vue";
+import type { CSSProperties, Ref } from "vue";
 
 export interface IndexStartEnd {
   startIndex: number;

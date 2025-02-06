@@ -1,7 +1,8 @@
 import { describe, expect, it, vi } from "vitest";
-import { ArraySizeManager } from "../ArraySizeManager";
 import { ref } from "vue";
 import { flushPromises } from "@vue/test-utils";
+
+import { ArraySizeManager } from "../ArraySizeManager";
 
 describe("ArrayIndividualSizeManager", () => {
   const sizeManager = new ArraySizeManager([10, 20, 30, 40, 50]);
