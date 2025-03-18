@@ -2,13 +2,23 @@
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=KNIME_vue-headless-virtual-scrolling&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=KNIME_vue-headless-virtual-scrolling)
 
-This repository is maintained by the [KNIME UI Extensions Development Team](mailto:team-ui-extensions@knime.com).
+Fast scrolling of large amounts of data for [Vue] ⚡️
 
-Fast scrolling of large amounts of data. ⚡️
+While there is great work out there like [@vueuse/useVirtualList] and [vue-virtual-scroller], they don't meet our requirement of being able to simultaneously do horizontal ⇢ and vertical ⇣ virtual scrolling. Therefore, we took inspiration by the above and created [@knime/vue-headless-virtual-scroller].
 
-Uses a virtual grid to enable simultanous horizontal ⇢ and vertical ⇣ virtual scrolling. Based on the [Vue] JavaScript framework.
+We're using it in our open-source [KNIME Analytics Platform] and [KNIME Hub] for rendering tables with millions of rows and thousands of columns, used by 300,000+ of users worldwide. So yes, it's production-ready.
 
-Inspired by [Vue Virtual Scroller].
+The following comparison gives an overview about the differences:
+
+|                                      | [@knime/vue-headless-virtual-scroller] | [@vueuse/useVirtualList] | [vue-virtual-scroller] |
+| :----------------------------------- | :------------------------------------: | :----------------------: | :--------------------: |
+| 2D-scrolling (vertical & horizontal) |                   ✅                   |            ❌            |           ❌           |
+| Different height/width of items      |                   ✅                   |            ❌            |           ✅           |
+| Lazy-loading                         |                   ✅                   |            ✅            |           ❌           |
+| Headless composable                  |                   ✅                   |            ✅            |           ❌           |
+| Fully typed                          |                   ✅                   |            ✅            |           ❌           |
+| Actively maintained                  |                   ✅                   |            ✅            |           ❌           |
+| Bundle size                          |         ~7 kB (gzip: ~2.5 kB)          |           TBD            |          TBD           |
 
 ## Demo
 
@@ -35,7 +45,7 @@ See the [`DemoGrid.vue`](demo/src/components/DemoGrid.vue) for a simple integrat
 
 ### Prerequisites
 
-- Install [Node.js][node], see version in [package.json](package.json).
+- Install Node.js, see version in [package.json](package.json).
 
 Newer versions may also work, but have not been tested.
 
@@ -62,8 +72,7 @@ npm run dev
 
 #### Running unit tests
 
-This project contains unit tests based on [Vitest].
-They are run with
+This project contains unit tests based on [Vitest]. They are run with
 
 ```sh
 npm run test:unit
@@ -88,7 +97,7 @@ npm run audit
 
 ## Building
 
-To build the table component as [Vue library], use the following command:
+To build as [Vue library], use the following command:
 
 ```sh
 npm run build
@@ -100,13 +109,17 @@ Results are saved to `/dist` folder.
 
 - [KNIME Forum](https://forum.knime.com/)
 
+This repository is maintained by the [KNIME UI Extensions Development Team](mailto:team-ui-extensions@knime.com).
+
 [Vue]: https://vuejs.org/
-[Vue Virtual Scroller]: https://github.com/Akryum/vue-virtual-scroller
-[node]: https://knime-com.atlassian.net/wiki/spaces/SPECS/pages/905281540/Node.js+Installation
+[@vueuse/useVirtualList]: https://vueuse.org/core/useVirtualList/
+[vue-virtual-scroller]: https://github.com/Akryum/vue-virtual-scroller
+[@knime/vue-headless-virtual-scroller]: https://www.npmjs.com/package/@knime/vue-headless-virtual-scroller
+[KNIME Analytics Platform]: https://www.knime.com/knime-analytics-platform
+[KNIME Hub]: https://hub.knime.com
 [Vue library]: https://vitejs.dev/guide/build.html#library-mode
 [Vitest]: https://vitest.dev/
 [lcov]: https://github.com/linux-test-project/lcov
 [clover]: http://openclover.org/
 [husky]: https://www.npmjs.com/package/husky
 [lintstaged]: https://github.com/okonet/lint-staged
-[@knime/vue-headless-virtual-scroller]: https://www.npmjs.com/package/@knime/vue-headless-virtual-scroller
