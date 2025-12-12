@@ -36,7 +36,7 @@
     "publish": "npm run build && npm run changeset:publish"
   },
   "dependencies": {
-    "@vueuse/core": "10.7.0",
+    "@vueuse/core": "14.1.0",
     "raf-throttle": "2.0.6"
   },
   "devDependencies": {
