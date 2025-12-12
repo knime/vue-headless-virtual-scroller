@@ -96,6 +96,21 @@ npm run build
 
 Results are saved to `/dist` folder.
 
+## Maintaining changelogs & publishing to npm
+
+Every PR must include changeset file(s) out of which the CHANGELOG file will get generated. Use the following command to create such files:
+
+```sh
+npm run changeset
+```
+
+Do merge those files with the PR to master.
+
+### Publishing to npm
+
+The [`release` GitHub Action](./.github/workflows/release.yml) will automatically create & update a "Version Packages" PR if it detects
+changeset file(s) on master. Once a release should be published to npm, simply do merge this PR.
+
 ## Join the Community!
 
 - [KNIME Forum](https://forum.knime.com/)
